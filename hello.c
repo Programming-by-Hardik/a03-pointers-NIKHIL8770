@@ -38,46 +38,47 @@ int main() {
 }
 
 //---------------------------------
-// COMPLETE THE FUNCTION DEFINITIONS BELOW 
+// FUNCTION DEFINITIONS
 //---------------------------------
-
 
 // Function to swap two integers using pointers
 void swap(int *a, int *b) {
-    //Write the function description
-
-
-
-
-
-
-
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
+
+// Time Complexity: O(1)
+// Space Complexity: O(1)
 
 // Function to find the maximum value in an array using pointers
 int findMax(int *arr, int length) {
-    //Write the fucntion description 
-
-
-
-
-
-
-
-  
+    int max = *arr; // Assume the first element is the max initially
+    for (int i = 1; i < length; i++) {
+        if (*(arr + i) > max) {
+            max = *(arr + i);
+        }
+    }
+    return max;
 }
+
+// Time Complexity: O(n), where n is the number of elements in the array
+// Space Complexity: O(1)
 
 // Function to reverse an array using pointers
 void reverseArray(int *arr, int length) {
-    //Write the function description 
+    int *start = arr;             // Pointer to the start of the array
+    int *end = arr + length - 1;  // Pointer to the end of the array
 
-
-
-
-
-
-
+    while (start < end) {
+        swap(start, end);
+        start++;
+        end--;
+    }
 }
+
+// Time Complexity: O(n), where n is the number of elements in the array
+// Space Complexity: O(1)
 
 //---------------------------------
 // TEST CASES - Don't change the code below this.
